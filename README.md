@@ -1,0 +1,1 @@
+# graphql_fastapi_not_clean_architecture
