@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from models import Base
 from database import engine
@@ -33,3 +34,6 @@ app.include_router(graphql_app, prefix="/graphql")
 @app.get("/user/", response_model=UserBaseModel)
 def get_user(user_id: int):
     return RestUserController().get_user(user_id)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
